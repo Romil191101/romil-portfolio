@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webzyrova — Project Snapshots &amp; Architecture Showcase | Romil Solanki</title>
+  <meta name="description"
+    content="Detailed visual snapshots and UI architecture of Webzyrova modern web solutions platform." />
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-base: #08090e;
+      --bg-surface: #0e111a;
+      --bg-surface-elevated: #151926;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.16);
+      --border-accent: rgba(6, 182, 212, 0.4);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-primary: #6366f1;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-purple: #a855f7;
+      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      min-height: 100vh;
+      line-height: 1.6;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+      background-attachment: fixed;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Navigation Header */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 9, 14, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 0;
+      margin-bottom: 36px;
+    }
+
+    .top-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      transition: all var(--transition-fast);
+    }
+
+    .back-link:hover {
+      color: #ffffff;
+      border-color: var(--accent-cyan);
+      background: var(--bg-surface-elevated);
+      transform: translateX(-3px);
+    }
+
+    .nav-brand-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    }
+
+    .brand-text-wrap h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .brand-text-wrap span {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      letter-spacing: 0.05em;
+    }
+
+    /* Page Hero Banner */
+    .hero-banner {
+      background: linear-gradient(180deg, rgba(21, 25, 38, 0.7), rgba(14, 17, 26, 0.9));
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      margin-bottom: 36px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .meta-chip {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .meta-chip i {
+      color: var(--accent-cyan);
+    }
+
+    /* Control Bar: Filters, Search, View Mode */
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+    }
+
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .filter-btn:hover {
+      color: #ffffff;
+      border-color: var(--border-medium);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-primary);
+      color: #ffffff;
+      border-color: var(--accent-primary);
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    }
+
+    .filter-btn .count {
+      font-size: 0.72rem;
+      opacity: 0.75;
+      font-family: var(--font-mono);
+    }
+
+    .view-info {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    @media (max-width: 860px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Snapshot Card */
+    .snapshot-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+
+    .snapshot-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-accent);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    .card-media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #020305;
+      overflow: hidden;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block;
+    }
+
+    .snapshot-card:hover .card-img {
+      transform: scale(1.04);
+    }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(8, 9, 14, 0.88) 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 18px;
+      opacity: 0.9;
+      transition: opacity var(--transition-fast);
+    }
+
+    .zoom-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(14, 16, 23, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+    }
+
+    .snapshot-card:hover .zoom-badge {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      transform: scale(1.1);
+    }
+
+    .sequence-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background: rgba(8, 9, 14, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      border-radius: var(--radius-xs);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .card-body {
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-category {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: auto;
+    }
+
+    .click-zoom-hint {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .open-btn {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-primary);
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+    }
+
+    .open-btn:hover {
+      background: var(--accent-primary);
+      color: #ffffff;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      background: rgba(4, 5, 8, 0.95);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+    }
+
+    .lightbox-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 1140px;
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.96);
+      transition: transform var(--transition-normal);
+    }
+
+    .lightbox-modal.open .lightbox-content {
+      transform: scale(1);
+    }
+
+    .lightbox-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: var(--bg-surface-elevated);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .lb-header-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .lb-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .lb-counter {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 3px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .lb-close-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all var(--transition-fast);
+    }
+
+    .lb-close-btn:hover {
+      color: #ffffff;
+      background: #ef4444;
+      border-color: #ef4444;
+    }
+
+    .lightbox-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #020305;
+      padding: 16px 70px;
+      min-height: 420px;
+      max-height: 72vh;
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-stage {
+        padding: 12px 46px;
+        min-height: 260px;
+      }
+    }
+
+    .lightbox-stage img {
+      max-width: 100%;
+      max-height: 68vh;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      border-radius: var(--radius-xs);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+      transition: opacity 0.2s ease;
+    }
+
+    .lb-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(14, 16, 23, 0.88);
+      border: 1px solid var(--border-medium);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      backdrop-filter: blur(8px);
+      transition: all var(--transition-fast);
+      z-index: 10;
+    }
+
+    .lb-nav-btn:hover {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .lb-nav-btn.prev {
+      left: 16px;
+    }
+
+    .lb-nav-btn.next {
+      right: 16px;
+    }
+
+    .lightbox-footer {
+      padding: 14px 24px;
+      background: var(--bg-surface-elevated);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .lb-caption {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+    }
+
+    .lb-dots-container {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lb-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-medium);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .lb-dot.active {
+      background: var(--accent-cyan);
+      transform: scale(1.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Sticky Navigation -->
+  <nav class="top-nav">
+    <div class="container top-nav-inner">
+      <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Portfolio</span>
+      </a>
+
+      <div class="nav-brand-badge">
+        <div class="brand-logo-icon">
+          <i class="fas fa-cube"></i>
+        </div>
+        <div class="brand-text-wrap">
+          <h2>Webzyrova</h2>
+          <span>IDEAS → WEBSITES → REALITY</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Hero Banner -->
+    <header class="hero-banner">
+      <div class="hero-eyebrow">
+        <i class="fas fa-layer-group"></i>
+        <span>Experience &amp; Architecture Showcase</span>
+      </div>
+      <h1 class="hero-title">
+        Webzyrova <span>Snapshots Gallery</span>
+      </h1>
+      <p class="hero-desc">
+        A visual showcase of Webzyrova’s modern web solutions, highlighting the hero experience, service architecture,
+        interactive FAQ, and high-conversion contact ecosystem.
+      </p>
+      <div class="meta-chip">
+        <i class="fas fa-user-check"></i>
+        <span>Built by Romil Solanki</span>
+      </div>
+      </div>
+    </header>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div class="filter-pills" id="filterPills">
+        <button class="filter-btn active" data-filter="all">
+          <span>All Snapshots</span>
+          <span class="count">4</span>
+        </button>
+      </div>
+
+      <div class="view-info" id="viewCount">
+        Showing 4 of 4 Views in Sequence
+      </div>
+    </div>
+
+    <!-- Gallery Grid (Sequential Snapshots) -->
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- Snapshot 01: Hero -->
+      <article class="snapshot-card" data-category="hero" data-index="0">
+        <div class="card-media" onclick="openLightbox(0)">
+          <img src="images-ss/webzyrova-1-hero.png" alt="01. Hero & Branding Landing" class="card-img" />
+          <div class="card-overlay">
+            <div class="zoom-badge"><i class="fas fa-expand"></i></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-category">Landing &amp; Brand Presentation</span>
+          <h2 class="card-title">01. Hero Section — "We Build Digital Experiences That Inspire"</h2>
+          <p class="card-desc">
+            A bold, high-impact hero experience featuring strong typography, engaging CTAs, a premium agency identity,
+            and seamless sticky navigation.
+
+          </p>
+          <div class="card-footer">
+            <button type="button" class="open-btn" onclick="openLightbox(0)">
+              <span>Full View</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Snapshot 02: Services -->
+      <article class="snapshot-card" data-category="services" data-index="1">
+        <div class="card-media" onclick="openLightbox(1)">
+          <img src="images-ss/webzyrova-2-services.png" alt="02. Core Services Ecosystem" class="card-img" />
+          <div class="card-overlay">
+            <div class="zoom-badge"><i class="fas fa-expand"></i></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-category">Core Business Offerings</span>
+          <h2 class="card-title">02. Services Ecosystem — Digital Marketing &amp; Engineering</h2>
+          <p class="card-desc">
+            Four focused service pillars covering Digital Marketing, SEO, High-Performance Web Development, and Dynamic
+            UI Animations.
+          </p>
+          <div class="card-footer">
+            <button type="button" class="open-btn" onclick="openLightbox(1)">
+              <span>Full View</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Snapshot 03: FAQ -->
+      <article class="snapshot-card" data-category="faq" data-index="2">
+        <div class="card-media" onclick="openLightbox(2)">
+          <img src="images-ss/webzyrova-3-faq.png" alt="03. Interactive FAQ Section" class="card-img" />
+          <div class="card-overlay">
+            <div class="zoom-badge"><i class="fas fa-expand"></i></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-category">Client Knowledge Base</span>
+          <h2 class="card-title">03. Frequently Asked Questions — Accordion Interface</h2>
+          <p class="card-desc">
+            An interactive FAQ accordion addressing common client questions on project timelines, ongoing maintenance,
+            and ROI measurement.
+
+          </p>
+          <div class="card-footer">
+            <button type="button" class="open-btn" onclick="openLightbox(2)">
+              <span>Full View</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Snapshot 04: Contact -->
+      <article class="snapshot-card" data-category="contact" data-index="3">
+        <div class="card-media" onclick="openLightbox(3)">
+          <img src="images-ss/webzyrova-4-contact.png" alt="04. Client Contact & Inquiries" class="card-img" />
+          <div class="card-overlay">
+            <div class="zoom-badge"><i class="fas fa-expand"></i></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-category">Lead Generation &amp; Inquiries</span>
+          <h2 class="card-title">04. Contact Portal — "Let's Work Together" &amp; Interactive Map</h2>
+          <p class="card-desc">
+            A modern dark-themed contact experience featuring an interactive inquiry form, location map, direct contact
+            channels, and a polished brand footer.
+
+          </p>
+          <div class="card-footer">
+            <button type="button" class="open-btn" onclick="openLightbox(3)">
+              <span>Full View</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Fullscreen Lightbox Slideshow -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+    <div class="lightbox-content">
+      <div class="lightbox-header">
+        <div class="lb-header-info">
+          <h3 class="lb-title" id="lbTitle">Snapshot Preview</h3>
+          <span class="lb-counter" id="lbCounter">1 / 4</span>
+        </div>
+        <button class="lb-close-btn" id="lbClose" aria-label="Close fullscreen view">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="lightbox-stage">
+        <button class="lb-nav-btn prev" id="lbPrev" aria-label="Previous image">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <img id="lbImg" src="images-ss/webzyrova-1-hero.png" alt="Snapshot Full View" />
+
+        <button class="lb-nav-btn next" id="lbNext" aria-label="Next image">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="lightbox-footer">
+        <div class="lb-caption" id="lbCaption">
+          Webzyrova — Modern Web Solutions
+        </div>
+        <div class="lb-dots-container" id="lbDots"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const snapshotsData = [
+      {
+        src: 'images-ss/webzyrova-1-hero.png',
+        title: '01. Hero Section — "We Build Digital Experiences That Inspire"',
+        caption: 'Engaging hero landing presentation with sticky top navigation, vibrant branding, and action pathways.',
+        category: 'hero'
+      },
+      {
+        src: 'images-ss/webzyrova-2-services.png',
+        title: '02. Services Ecosystem — Digital Marketing & Web Development',
+        caption: 'Modern 4-pillar services grid: Digital Marketing, SEO, Scalable Web Dev, and UI Micro-Animations.',
+        category: 'services'
+      },
+      {
+        src: 'images-ss/webzyrova-3-faq.png',
+        title: '03. Frequently Asked Questions — Accordion Interface',
+        caption: 'Interactive client FAQ accordion designed for seamless transparency, response times, and project scope.',
+        category: 'faq'
+      },
+      {
+        src: 'images-ss/webzyrova-4-contact.png',
+        title: '04. Contact Portal — "Let\'s Work Together" & Interactive Map',
+        caption: 'High-conversion client contact interface with direct communication channels, messaging form, and location map.',
+        category: 'contact'
+      }
+    ];
+
+    let currentIndex = 0;
+    let filteredIndices = [0, 1, 2, 3];
+
+    const modal = document.getElementById('lightboxModal');
+    const lbImg = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbCounter = document.getElementById('lbCounter');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbDots = document.getElementById('lbDots');
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+
+    function renderDots() {
+      lbDots.innerHTML = snapshotsData.map((_, i) => `
+        <div class="lb-dot ${i === currentIndex ? 'active' : ''}" onclick="openLightbox(${i})"></div>
+      `).join('');
+    }
+
+    function openLightbox(index) {
+      if (index < 0) index = snapshotsData.length - 1;
+      if (index >= snapshotsData.length) index = 0;
+      currentIndex = index;
+
+      const item = snapshotsData[currentIndex];
+      lbImg.style.opacity = '0.3';
+
+      setTimeout(() => {
+        lbImg.src = item.src;
+        lbImg.alt = item.title;
+        lbTitle.textContent = item.title;
+        lbCounter.textContent = `${currentIndex + 1} / ${snapshotsData.length}`;
+        lbCaption.textContent = item.caption;
+        lbImg.style.opacity = '1';
+        renderDots();
+      }, 100);
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => openLightbox(currentIndex - 1));
+    lbNext.addEventListener('click', () => openLightbox(currentIndex + 1));
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeLightbox();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') openLightbox(currentIndex - 1);
+      if (e.key === 'ArrowRight') openLightbox(currentIndex + 1);
+    });
+
+    // Category Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.snapshot-card');
+    const viewCount = document.getElementById('viewCount');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        let count = 0;
+
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'flex';
+            count++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        viewCount.textContent = `Showing ${count} of ${snapshotsData.length} Views`;
+      });
+    });
+  </script>
+</body>
+
+</html>

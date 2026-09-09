@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLANKI ROMIL CHIRAGBHAI — Resume</title>
+  <meta name="description" content="Professional Resume of Solanki Romil Chiragbhai - IT Diploma Student, Web Developer, and Python Developer." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       RESUME DESIGN SYSTEM & CSS VARIABLES
+       Obsidian Navy & Amber Gold Visual Identity (Matching Portfolio Aesthetic)
+       ========================================================================== */
+    :root {
+      --bg-canvas: #040508;
+      --bg-base: #080a10;
+      --bg-surface: #0e111a;
+      --bg-surface-elevated: #141824;
+      --bg-card: rgba(14, 17, 26, 0.92);
+      --bg-card-alt: #101420;
+      --bg-badge: rgba(245, 158, 11, 0.09);
+      --bg-badge-solid: #161b29;
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.14);
+      --border-accent: rgba(245, 158, 11, 0.4);
+      --border-accent-light: rgba(245, 158, 11, 0.22);
+
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --text-accent: #f59e0b;
+      --text-accent-glow: #fbbf24;
+
+      --accent-gold: #f59e0b;
+      --accent-gold-hover: #fbbf24;
+      --accent-amber: #d97706;
+      --accent-cyan: #06b6d4;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 25px rgba(245, 158, 11, 0.18);
+    }
+
+    /* Light Mode Switch for Recruiter Print Flexibility */
+    [data-theme="light"] {
+      --bg-canvas: #e2e8f0;
+      --bg-base: #ffffff;
+      --bg-surface: #f8fafc;
+      --bg-surface-elevated: #f1f5f9;
+      --bg-card: #f8fafc;
+      --bg-card-alt: #ffffff;
+      --bg-badge: rgba(217, 119, 6, 0.1);
+      --bg-badge-solid: #f1f5f9;
+
+      --border-subtle: #e2e8f0;
+      --border-medium: #cbd5e1;
+      --border-accent: rgba(217, 119, 6, 0.45);
+      --border-accent-light: rgba(217, 119, 6, 0.25);
+
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --text-accent: #b45309;
+      --text-accent-glow: #d97706;
+
+      --accent-gold: #d97706;
+      --accent-gold-hover: #b45309;
+      --accent-amber: #b45309;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.25s ease;
+    }
+
+    /* ==========================================================================
+       TOOLBAR (Screen only)
+       ========================================================================== */
+    .toolbar {
+      max-width: 210mm;
+      margin: 20px auto 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: #0d101a;
+      border: 1px solid var(--border-medium);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .toolbar-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toolbar-title .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      box-shadow: 0 0 10px var(--accent-gold);
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+    }
+
+    .btn-secondary {
+      background: #171b29;
+      color: #e2e8f0;
+      border-color: var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background: #1f2537;
+      border-color: var(--border-medium);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #08090e;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5);
+    }
+
+    /* ==========================================================================
+       RESUME CONTAINER (Exact A4 Page Structure)
+       ========================================================================== */
+    .resume-wrapper {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      margin: 0 auto 35px;
+      background: var(--bg-base);
+      background-image: 
+        radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(6, 182, 212, 0.04) 0%, transparent 45%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+      padding: 22mm 20mm 18mm 20mm;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Top Accent Stripe */
+    .resume-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      background: linear-gradient(90deg, transparent 0%, #f59e0b 25%, #fbbf24 50%, #f59e0b 75%, transparent 100%);
+    }
+
+    /* ==========================================================================
+       HEADER SECTION
+       ========================================================================== */
+    .resume-header {
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .resume-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100px;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--accent-gold), transparent);
+    }
+
+    .candidate-name {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 5px;
+    }
+
+    .candidate-title {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--accent-gold);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+    }
+
+    .contact-item svg {
+      width: 13px;
+      height: 13px;
+      color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .contact-item a:hover {
+      color: var(--text-primary);
+    }
+
+    .contact-separator {
+      color: var(--text-muted);
+      font-size: 10px;
+      opacity: 0.6;
+    }
+
+    /* ==========================================================================
+       BODY GRID (2 Columns: Main Content + Sidebar)
+       ========================================================================== */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .column-main {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .column-side {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 3.5px;
+      height: 12px;
+      background: var(--accent-gold);
+      border-radius: 1.5px;
+    }
+
+    /* Profile / Summary Card */
+    .profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 12px;
+      line-height: 1.58;
+      color: var(--text-secondary);
+      text-align: justify;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Experience Card */
+    .item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 11px 13px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .item-role {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .item-badge {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--accent-gold);
+      background: var(--bg-badge);
+      border: 1px solid var(--border-accent-light);
+      padding: 2px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .item-company {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 7px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 13px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .bullet-list li::before {
+      content: '•';
+      position: absolute;
+      left: 1px;
+      top: -0.5px;
+      color: var(--accent-gold);
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    /* Project Cards */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 10px 13px;
+      margin-bottom: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-desc {
+      font-size: 11.8px;
+      color: var(--text-secondary);
+      line-height: 1.48;
+    }
+
+    /* Education Items */
+    .edu-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 10px 13px;
+      margin-bottom: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-degree {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .edu-institution {
+      font-size: 11.8px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-dates {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--accent-gold);
+    }
+
+    /* ==========================================================================
+       SIDEBAR PANELS (Skills, Tech, Languages, Interests)
+       ========================================================================== */
+    .sidebar-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 11px 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Core Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .skill-chip {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 5px;
+      padding: 5px 7px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      line-height: 1.25;
+    }
+
+    .skill-chip::before {
+      content: '';
+      width: 4.5px;
+      height: 4.5px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    /* Technical Skills Summary */
+    .tech-skills-box {
+      font-family: var(--font-mono);
+      font-size: 10.8px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      padding: 9px 10px;
+      border-radius: 5px;
+    }
+
+    .tech-skills-box span.dot {
+      color: var(--accent-gold);
+      padding: 0 4px;
+      font-weight: bold;
+    }
+
+    /* Languages */
+    .lang-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.8px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed var(--border-subtle);
+    }
+
+    .lang-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .lang-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .lang-level {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent-gold);
+      background: var(--bg-badge);
+      border: 1px solid var(--border-accent-light);
+      padding: 1.5px 6px;
+      border-radius: 4px;
+    }
+
+    /* Interests */
+    .interests-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .interest-pill {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 5px;
+      padding: 4.5px 9px;
+      font-size: 11.2px;
+      color: var(--text-secondary);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .interest-pill svg {
+      width: 11px;
+      height: 11px;
+      color: var(--accent-gold);
+    }
+
+    /* ==========================================================================
+       PRINT STYLES
+       ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: #080a10 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .resume-wrapper {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 18mm 20mm 16mm 20mm !important;
+        page-break-inside: avoid !important;
+        page-break-after: avoid !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar for convenient one-click PDF printing / viewing -->
+  <div class="toolbar">
+    <div class="toolbar-title">
+      <span class="dot"></span>
+      <span>SOLANKI ROMIL CHIRAGBHAI — Professional Developer Resume</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn btn-secondary" onclick="toggleTheme()" id="themeBtn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        Toggle Theme
+      </button>
+      <button class="btn btn-primary" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print / Save to PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- A4 Single-Page Resume Container -->
+  <main class="resume-wrapper">
+    
+    <!-- HEADER -->
+    <header class="resume-header" style="display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <div style="flex: 1;">
+        <h1 class="candidate-name">SOLANKI ROMIL CHIRAGBHAI</h1>
+        <div class="candidate-title">
+          IT Diploma Student | Web Developer | Python Developer
+        </div>
+        <div class="contact-bar">
+          <span class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Ahmedabad, Gujarat
+          </span>
+          <span class="contact-separator">|</span>
+          <span class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            +91 85119 36803
+          </span>
+          <span class="contact-separator">|</span>
+          <span class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:romilsolanki7172@gmail.com">romilsolanki7172@gmail.com</a>
+          </span>
+          <span class="contact-separator">|</span>
+          <span class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <a href="https://www.linkedin.com/in/romil-solank" target="_blank" rel="noopener noreferrer">linkedin.com/in/romil-solank</a>
+          </span>
+        </div>
+      </div>
+      <div style="width: 82px; height: 82px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(100, 116, 139, 0.35); flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <img src="Romil_img.jpg" alt="Romil Solanki Photo" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;" />
+      </div>
+    </header>
+
+    <!-- MAIN BODY: 2 COLUMNS -->
+    <div class="resume-body">
+      
+      <!-- LEFT COLUMN -->
+      <div class="column-main">
+        
+        <!-- PROFILE -->
+        <section>
+          <h2 class="section-title">Professional Profile</h2>
+          <div class="profile-card">
+            Motivated and detail-oriented IT Diploma student with hands-on experience in web development. Skilled in HTML, CSS, JavaScript, PHP, MySQL, and WordPress, with experience building responsive and user-friendly websites. Strong problem-solving abilities, quick learning mindset, and a passion for developing efficient web applications and continuously improving technical skills.
+          </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section>
+          <h2 class="section-title">Professional Experience</h2>
+          
+          <div class="item-card" style="margin-bottom: 16px;">
+            <div class="item-header">
+              <div class="item-role">Web Developer / Founder</div>
+              <span class="item-badge">2024 – Present</span>
+            </div>
+            <div class="item-company">
+              <span>Webzyrova (Modern Web Solutions)</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Founded and architected Webzyrova to deliver custom, responsive, and scalable web solutions for clients.</li>
+              <li>Engineered cross-device web applications using PHP, MySQL, JavaScript, HTML5/CSS3, and Bootstrap.</li>
+              <li>Handled end-to-end web workflows including database design, UI/UX optimization, and client solution delivery.</li>
+            </ul>
+          </div>
+
+          <div class="item-card">
+            <div class="item-header">
+              <div class="item-role">Python Developer Intern</div>
+              <span class="item-badge">Duration: 1.5 Month</span>
+            </div>
+            <div class="item-company">
+              <span>Sattrix Software Solution</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Developed a Python FAQ Chatbot as an internship project.</li>
+              <li>Applied Python programming concepts to build a functional question-and-answer solution.</li>
+              <li>Worked on problem-solving and application development in a practical software environment.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section>
+          <h2 class="section-title">Projects</h2>
+          <div class="project-card">
+            <div class="project-name">Digital Marketing Website</div>
+            <p class="project-desc">
+              Built a responsive digital marketing website using web development technologies, focusing on user-friendly layout and presentation.
+            </p>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Yoga Cure Website</div>
+            <p class="project-desc">
+              Developed a website project focused on presenting yoga-related information through a clean and responsive web interface.
+            </p>
+          </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+          <h2 class="section-title">Education</h2>
+          <div class="edu-item">
+            <div class="edu-degree">Bachelor in Diploma IT Engineering</div>
+            <div class="edu-institution">
+              <span>LJ University, Ahmedabad</span>
+              <span class="edu-dates">Aug 2023 – May 2026</span>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Secondary School Certificate (SSC)</div>
+            <div class="edu-institution">
+              <span>Vidyadhish – Vidyasankul, Bhavnagar</span>
+              <span class="edu-dates">Feb 2022 – Mar 2023</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN (SIDEBAR) -->
+      <aside class="column-side">
+        
+        <!-- CORE SKILLS -->
+        <section>
+          <h2 class="section-title">Core Skills</h2>
+          <div class="sidebar-panel">
+            <div class="skills-grid">
+              <div class="skill-chip">Web Development</div>
+              <div class="skill-chip">HTML & CSS</div>
+              <div class="skill-chip">JavaScript</div>
+              <div class="skill-chip">PHP</div>
+              <div class="skill-chip">MySQL / SQL</div>
+              <div class="skill-chip">WordPress</div>
+              <div class="skill-chip">Python</div>
+              <div class="skill-chip">C++</div>
+              <div class="skill-chip">Java</div>
+              <div class="skill-chip">Responsive Design</div>
+              <div class="skill-chip">Problem Solving</div>
+              <div class="skill-chip">Quick Learner</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section>
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="sidebar-panel">
+            <div class="tech-skills-box">
+              HTML <span class="dot">•</span> CSS <span class="dot">•</span> JavaScript <span class="dot">•</span> PHP <span class="dot">•</span> MySQL / SQL <span class="dot">•</span> Python <span class="dot">•</span> C++ <span class="dot">•</span> Java <span class="dot">•</span> WordPress
+            </div>
+          </div>
+        </section>
+
+        <!-- LANGUAGES -->
+        <section>
+          <h2 class="section-title">Languages</h2>
+          <div class="sidebar-panel">
+            <div class="lang-list">
+              <div class="lang-item">
+                <span class="lang-name">English</span>
+                <span class="lang-level">Moderate</span>
+              </div>
+              <div class="lang-item">
+                <span class="lang-name">Gujarati</span>
+                <span class="lang-level">Fluent</span>
+              </div>
+              <div class="lang-item">
+                <span class="lang-name">Hindi</span>
+                <span class="lang-level">Fluent</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- INTERESTS -->
+        <section>
+          <h2 class="section-title">Interests</h2>
+          <div class="sidebar-panel">
+            <div class="interests-tags">
+              <div class="interest-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                  <rect x="2" y="7" width="20" height="5"></rect>
+                  <line x1="12" y1="22" x2="12" y2="7"></line>
+                </svg>
+                Gaming
+              </div>
+              <div class="interest-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+                Horse Riding
+              </div>
+              <div class="interest-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18V5l12-2v13"></path>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+                Listening to Music
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </aside>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+    }
+  </script>
+</body>
+</html>

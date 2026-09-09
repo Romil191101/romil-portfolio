@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Romil Solanki | Web Developer &amp; Python Developer</title>
+  <meta name="title" content="Romil Solanki | Web Developer &amp; Python Developer" />
+  <meta name="description"
+    content="Romil Solanki is an IT Diploma Student, Web Developer, and Python Developer from Ahmedabad, Gujarat specializing in responsive web development, Python applications, and modern UI design." />
+  <meta name="keywords"
+    content="Romil Solanki, Web Developer, Python Developer, IT Diploma, HTML, CSS, JavaScript, PHP, MySQL, WordPress, Ahmedabad, Gujarat, India, Software Developer" />
+  <meta name="author" content="Romil Solanki" />
+  <meta name="theme-color" content="#08090e" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://romilsolanki7172.github.io/" />
+  <meta property="og:title" content="Romil Solanki | Web Developer &amp; Python Developer" />
+  <meta property="og:description"
+    content="Explore web applications, Python projects, and responsive websites developed by Romil Solanki." />
+  <meta property="og:image" content="Hero.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://romilsolanki7172.github.io/" />
+  <meta name="twitter:title" content="Romil Solanki | Web Developer &amp; Python Developer" />
+  <meta name="twitter:description"
+    content="Explore web applications, Python projects, and responsive websites developed by Romil Solanki." />
+  <meta name="twitter:image" content="Hero.png" />
+
+  <!-- Google Fonts & Devicons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+
+</head>
+
+<body>
+  <!-- Ambient Background Lighting & Grid -->
+  <div class="ambient-background">
+    <div class="ambient-grid"></div>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+  </div>
+  <div class="ambient-spotlight" id="ambientSpotlight"></div>
+
+  <!-- Custom Cursor (Desktop Pointer Devices) -->
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-ring" id="cursorRing"></div>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+  <!-- Floating Navigation Bar -->
+  <header class="header-wrapper" id="headerWrapper">
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <a href="#home" class="nav-brand" aria-label="Romil Solanki Home">
+        <span class="brand-icon">RS</span>
+        <span>Romil<span class="brand-dot">.</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <i class="fas fa-moon moon-icon"></i>
+          <i class="fas fa-sun sun-icon"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">
+          <span>Hire Me</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <button class="mobile-toggle-btn" id="mobileToggle" aria-label="Open mobile navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+    <ul class="mobile-menu-links">
+      <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#education" class="mobile-nav-link">Education</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary mobile-nav-link">
+      <span>Let's Connect</span>
+      <i class="fas fa-paper-plane"></i>
+    </a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="mainContent">
+
+    <!-- ==========================================================================
+           HERO SECTION
+           ========================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Left Hero Content -->
+          <div class="hero-content reveal">
+            <div class="status-badge">
+              <span class="pulse-dot"></span>
+              <span>AVAILABLE FOR OPPORTUNITIES</span>
+            </div>
+
+            <h1 class="hero-title">
+              Building Resilient <br />
+              <span class="gradient-text">Scalable Web Apps</span> &amp; Modern Systems.
+            </h1>
+
+            <div class="hero-typing-line">
+              <span class="prefix">&gt;</span>
+              <span class="typed-text" id="typedHeroText">Web &amp; Python Developer</span>
+              <span class="typing-cursor"></span>
+            </div>
+
+            <p class="hero-description">
+              Hi, I'm <strong>Romil Solanki</strong>—a dedicated Web Developer and Python Developer based in Ahmedabad,
+              Gujarat. I specialize in building responsive web applications, functional Python solutions, and
+              user-friendly digital experiences.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Projects</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="SOLANKI_ROMIL_CHIRAGBHAI_Resume.pdf" class="btn btn-secondary" download
+                aria-label="Download Romil Solanki Resume PDF">
+                <i class="fas fa-file-arrow-down"></i>
+                <span>Download CV</span>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <i class="fas fa-paper-plane"></i>
+                <span>Get In Touch</span>
+              </a>
+            </div>
+
+            <div class="hero-socials">
+              <span class="hero-social-label">Connect:</span>
+              <div class="hero-social-links">
+                <a href="https://www.linkedin.com/in/romil-solank" target="_blank" rel="noopener noreferrer"
+                  class="social-pill" aria-label="LinkedIn Profile" title="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:romilsolanki7172@gmail.com" class="social-pill" aria-label="Email Romil Solanki"
+                  title="Email">
+                  <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+918511936803" class="social-pill" aria-label="Call Romil Solanki" title="Phone">
+                  <i class="fas fa-phone"></i>
+                </a>
+                <a href="resume.html" class="social-pill" aria-label="View Resume" title="View Resume">
+                  <i class="fas fa-file-lines"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Hero Visual / Developer Profile Showcase -->
+          <div class="hero-visual reveal reveal-delay-1">
+            <div class="hero-profile-card glass-card">
+              <!-- Glow Aura Background -->
+              <div class="profile-glow-aura"></div>
+
+              <!-- Main Avatar Image Wrapper -->
+              <div class="profile-image-wrap">
+                <img src="Romil_img.jpg" alt="Romil Solanki - Web &amp; Python Developer" class="profile-img" />
+                <div class="profile-ring-glow"></div>
+              </div>
+
+              <!-- Floating Interactive Badges -->
+              <div class="float-badge badge-top-left glass-card">
+                <div class="badge-icon" style="background: linear-gradient(135deg, #0284c7, #6366f1);"><i
+                    class="fas fa-code"></i></div>
+              </div>
+
+              <div class="float-badge badge-bottom-right glass-card">
+                <div class="badge-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i
+                    class="fab fa-python"></i></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           ABOUT SECTION & BENTO METRICS
+           ========================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">
+            <i class="fas fa-user"></i>
+            <span>Engineering Philosophy</span>
+          </span>
+          <h2 class="section-title">Driven by <span class="highlight">Clean Architecture</span> &amp; Innovation</h2>
+          <p class="section-subtitle">
+            Bridging robust backend engineering with seamless user experiences to deliver scalable web applications.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Story Narrative -->
+          <div class="about-main-card glass-card reveal">
+            <div class="about-story">
+              <h3>Crafting Reliable Systems with Passion &amp; Precision</h3>
+              <p>
+                I am a passionate <strong>IT student</strong> at <strong>LJ University</strong> and an active
+                developer based in Ahmedabad, Gujarat. My development journey centers on building responsive web
+                applications,
+                clean database-driven solutions, and intuitive user experiences.
+              </p>
+              <p>
+                Proficient in <strong>Python, PHP, JavaScript, MySQL, and WordPress</strong>, I
+                take pride in writing clean, self-documenting code and turning ideas and user requirements into
+                functional,
+                interactive web solutions.
+              </p>
+              <p>
+                Whether developing responsive frontend interfaces, handling MySQL queries, or
+                building practical Python programs, I approach every project with curiosity, dedication, and continuous
+                learning.
+              </p>
+            </div>
+
+            <div class="pillars-grid">
+              <div class="pillar-item glass-card">
+                <div class="pillar-icon"><i class="fas fa-code"></i></div>
+                <h4>Clean Code</h4>
+                <p>Writing structured, readable, and maintainable code across web &amp; Python projects.</p>
+              </div>
+              <div class="pillar-item glass-card">
+                <div class="pillar-icon"><i class="fas fa-mobile-screen"></i></div>
+                <h4>Responsive Design</h4>
+                <p>Crafting accessible, pixel-perfect layouts for mobile, tablet, and desktop devices.</p>
+              </div>
+              <div class="pillar-item glass-card">
+                <div class="pillar-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h4>Rapid Learner</h4>
+                <p>Constantly staying ahead with emerging technologies, modern tools, and industry practices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Bento Metric Cards -->
+          <div class="bento-metrics reveal reveal-delay-2">
+            <div class="metric-card glass-card">
+              <div class="metric-number">3+</div>
+              <div class="metric-label">Years of Learning</div>
+              <div class="metric-sub">Hands-on coding, web technologies &amp; computer fundamentals.</div>
+            </div>
+            <div class="metric-card glass-card">
+              <div class="metric-number">2+</div>
+              <div class="metric-label">Academic &amp; Live Projects</div>
+              <div class="metric-sub">Responsive websites, web apps &amp; Python utilities.</div>
+            </div>
+            <div class="metric-card glass-card">
+              <div class="metric-number">8+</div>
+              <div class="metric-label">Tools &amp; Tech</div>
+              <div class="metric-sub">Python, PHP, JavaScript, MySQL, HTML5, CSS3, Bootstrap, Git.</div>
+            </div>
+            <div class="metric-card glass-card">
+              <div class="metric-number">100%</div>
+              <div class="metric-label">Dedication</div>
+              <div class="metric-sub">Commitment to performance, deadlines, and clean code.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           EDUCATION SECTION
+           ========================================================================== -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Academic Pathway</span>
+          </span>
+          <h2 class="section-title">Education &amp; <span class="highlight">Foundational Milestones</span></h2>
+          <p class="section-subtitle">
+            Strong computational foundation paired with practical software engineering experience.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Timeline Item 1: IT -->
+          <div class="timeline-entry reveal">
+            <div class="timeline-node"><i class="fas fa-graduation-cap"></i></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <span class="timeline-badge">2023 — 2026</span>
+                <span class="timeline-grade">IT Candidate</span>
+              </div>
+              <h3 class="timeline-title">Bachelor / Diploma of Information Technology</h3>
+              <div class="timeline-institute">
+                <i class="fas fa-university"></i>
+                <span>LJ University, Gujarat</span>
+              </div>
+              <p class="timeline-desc">
+                Focused on software engineering, databases, Java, PHP, web technologies, and data structures through
+                practical academic projects.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: 10th -->
+          <div class="timeline-entry reveal reveal-delay-2">
+            <div class="timeline-node"><i class="fas fa-award"></i></div>
+            <div class="timeline-card glass-card">
+              <div class="timeline-header">
+                <span class="timeline-badge">2022</span>
+                <span class="timeline-grade">Score: 82 Percentile (PR)</span>
+              </div>
+              <h3 class="timeline-title">Secondary School Certificate (10th Grade)</h3>
+              <div class="timeline-institute">
+                <i class="fas fa-building-columns"></i>
+                <span>Gujarat Board</span>
+              </div>
+              <p class="timeline-desc">
+                Completed secondary education under the Gujarat Board, with a strong foundation in mathematics,
+                science, and computer fundamentals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           SKILLS ECOSYSTEM SECTION
+           ========================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">
+            <i class="fas fa-code"></i>
+            <span>Tech Stack</span>
+          </span>
+          <h2 class="section-title">Ecosystem &amp; <span class="highlight">Technical Expertise</span></h2>
+          <p class="section-subtitle">
+            Crafting modern, scalable digital experiences with the right technologies, tools, and engineering expertise.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Category 2: Programming Languages -->
+          <div class="skill-category-card glass-card reveal reveal-delay-1">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+              <h3 class="skill-cat-title">Languages</h3>
+              <span class="skill-cat-tag">Foundational</span>
+            </div>
+            <div class="skill-chips-row">
+              <div class="skill-chip">
+                <i class="devicon-java-plain"></i>
+                <span>Java</span>
+              </div>
+              <div class="skill-chip">
+                <i class="devicon-javascript-plain"></i>
+                <span>JavaScript (ES6+)</span>
+              </div>
+              <div class="skill-chip">
+                <i class="devicon-python-plain"></i>
+                <span>Python</span>
+              </div>
+              <div class="skill-chip">
+                <i class="devicon-php-plain"></i>
+                <span>PHP</span>
+              </div>
+              <div class="skill-chip">
+                <i class="devicon-kotlin-plain" style="color: #7f52ff"></i>
+                <span>Kotlin</span>
+              </div>
+              <div class="skill-chip">
+                <i class="fas fa-terminal" style="color: var(--accent-cyan)"></i>
+                <span>SQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Databases & Storage -->
+          <div class="skill-category-card glass-card reveal reveal-delay-2">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-database"></i></div>
+              <h3 class="skill-cat-title">Databases &amp; Architecture</h3>
+              <span class="skill-cat-tag">Data Layer</span>
+            </div>
+            <div class="skill-chips-row">
+              <div class="skill-chip">
+                <i class="devicon-mysql-plain"></i>
+                <span>MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Frontend & Tools -->
+          <div class="skill-category-card glass-card reveal reveal-delay-3">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-laptop-code"></i></div>
+              <h3 class="skill-cat-title">Frontend &amp; Tools</h3>
+              <span class="skill-cat-tag">Tooling</span>
+            </div>
+            <div class="skill-chips-row">
+              <div class="skill-chip">
+                <i class="devicon-html5-plain"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="skill-chip">
+                <i class="devicon-css3-plain"></i>
+                <span>CSS3 / Vanilla</span>
+              </div>
+              <div class="skill-chip">
+                <i class="devicon-bootstrap-plain"></i>
+                <span>Bootstrap 5</span>
+              </div>
+              <div class="skill-chip">
+                <i class="devicon-git-plain"></i>
+                <span>Git &amp; GitHub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           EXPERIENCE SECTION
+           ========================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">
+            <i class="fas fa-briefcase"></i>
+            <span>Career Journey</span>
+          </span>
+          <h2 class="section-title">Work Experience &amp; <span class="highlight">Ventures</span></h2>
+          <p class="section-subtitle">
+            Hands-on software development, real-world web engineering, and client-centric digital solution delivery.
+          </p>
+        </div>
+
+        <div class="experience-container">
+          <!-- Experience 1: Webzyrova -->
+          <div class="experience-card glass-card reveal" style="margin-bottom: 32px;">
+            <div class="exp-top-row">
+              <div class="exp-role-group">
+                <div class="exp-company-logo"
+                  style="background: linear-gradient(135deg, #0284c7, #6366f1); box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4);">
+                  <i class="fas fa-cube"></i>
+                </div>
+                <div>
+                  <h3 class="exp-role-title">Web Developer / Founder</h3>
+                  <div class="exp-company-link">
+                    <span>Webzyrova</span>
+                    <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+                  </div>
+                </div>
+              </div>
+              <span class="exp-period-badge"
+                style="color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.25);">
+                2024 — Present • Freelance / Venture
+              </span>
+            </div>
+            <p class="exp-overview">
+              Founded and architected <strong>Webzyrova</strong> to craft modern, responsive, and high-performance web
+              solutions for businesses. Focused on converting conceptual ideas into clean, scalable digital reality
+              across mobile, tablet, and desktop ecosystems.
+            </p>
+
+            <div class="exp-achievements-title">Key Responsibilities &amp; Capabilities</div>
+            <div class="exp-bullet-list">
+              <div class="exp-bullet-item">
+                <i class="fas fa-check-circle"></i>
+                <span><strong>Modern Web Development:</strong> Engineering fast, scalable web applications with clean
+                  architecture and maintainable code.</span>
+              </div>
+              <div class="exp-bullet-item">
+                <i class="fas fa-check-circle"></i>
+                <span><strong>Custom Client Solutions:</strong> Tailoring database-driven web platforms to client
+                  requirements using PHP, MySQL &amp; JavaScript.</span>
+              </div>
+              <div class="exp-bullet-item">
+                <i class="fas fa-check-circle"></i>
+                <span><strong>Responsive &amp; Adaptive UI:</strong> Designing seamless multi-device layouts with modern
+                  CSS, Bootstrap, and interactive JS.</span>
+              </div>
+              <div class="exp-bullet-item">
+                <i class="fas fa-check-circle"></i>
+                <span><strong>Performance &amp; Reliability:</strong> Implementing optimization strategies, asset
+                  minification, and secure database practices.</span>
+              </div>
+            </div>
+
+            <div class="exp-stack-tags">
+              <span class="exp-tag">PHP</span>
+              <span class="exp-tag">MySQL</span>
+              <span class="exp-tag">JavaScript (ES6+)</span>
+              <span class="exp-tag">HTML5 / CSS3</span>
+              <span class="exp-tag">Bootstrap 5</span>
+              <span class="exp-tag">WordPress</span>
+              <span class="exp-tag">Responsive Design</span>
+              <span class="exp-tag">Web Architecture</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           PROJECTS SECTION
+           ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">
+            <i class="fas fa-layer-group"></i>
+            <span>Portfolio Highlights</span>
+          </span>
+          <h2 class="section-title">Featured <span class="highlight">Projects &amp; Work</span></h2>
+          <p class="section-subtitle">
+            A showcase of live web platforms, digital systems, and software engineering initiatives.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="projects-filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="python">Python &amp; Apps</button>
+        </div>
+
+        <!-- Projects Bento Grid -->
+        <div class="projects-grid">
+
+          <!-- Project 1: Webzyrova (Featured Wide) -->
+          <div class="project-card featured-wide glass-card reveal" data-category="web">
+            <a href="webzyrova-snapshots.html" class="project-media" title="Open Webzyrova Snapshots Page"
+              style="display: block; text-decoration: none;">
+              <img src="images-ss/webzyrova.jpg" alt="Webzyrova Web Solutions Platform Mockup" class="project-img" />
+              <div class="project-overlay">
+                <span class="project-number-badge">01 • FEATURED VENTURE</span>
+                <span class="preview-zoom-btn" title="Open Snapshots Page"><i
+                    class="fas fa-arrow-up-right-from-square"></i></span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div>
+                <span class="project-category">Full-Stack Web Venture</span>
+                <h3 class="project-title">Webzyrova Solutions</h3>
+                <div class="project-tagline">Ideas → Websites → Reality</div>
+                <p class="project-desc">
+                  Modern web solutions platform engineered to deliver fast, responsive, and scalable web applications
+                  for businesses, integrating dynamic databases, clean service architectures, and interactive UI
+                  aesthetics.
+                </p>
+                <div class="project-tech-tags">
+                  <span class="tech-tag">HTML5 / CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Bootstrap 5</span>
+                </div>
+              </div>
+              <div class="project-footer-actions">
+                <a href="webzyrova-snapshots.html" class="btn btn-primary btn-sm">
+                  <span>View Experience</span>
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           CONTACT SECTION
+           ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">
+            <i class="fas fa-paper-plane"></i>
+            <span>Let's Collaborate</span>
+          </span>
+          <h2 class="section-title">Have a Project in Mind? <span class="highlight">Let's Build It.</span></h2>
+          <p class="section-subtitle">
+            Available for web development roles, Python developer positions, internships, and technical collaboration.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Contact Info Card -->
+          <div class="contact-info-card glass-card reveal">
+            <h3 class="contact-headline">Reach Out Directly</h3>
+            <p class="contact-subtext">
+              Feel free to contact me for web development, Python applications, responsive websites, or software
+              engineering inquiries.
+            </p>
+
+            <div class="contact-channels">
+              <!-- Email Item with 1-Click Copy -->
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-item-details">
+                  <span class="contact-item-label">Email Address</span>
+                  <a href="mailto:romilsolanki7172@gmail.com" class="contact-item-value">romilsolanki7172@gmail.com</a>
+                </div>
+                <button class="copy-pill-btn copy-btn" data-copy="romilsolanki7172@gmail.com" title="Copy Email">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+
+              <!-- Phone Item -->
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-item-details">
+                  <span class="contact-item-label">Direct Phone</span>
+                  <a href="tel:+918511936803" class="contact-item-value">+91 85119 36803</a>
+                </div>
+                <button class="copy-pill-btn copy-btn" data-copy="+918511936803" title="Copy Phone Number">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+
+              <!-- Location Item -->
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="fas fa-location-dot"></i>
+                </div>
+                <div class="contact-item-details">
+                  <span class="contact-item-label">Location &amp; Timezone</span>
+                  <span class="contact-item-value">Ahmedabad, Gujarat (IST • UTC+5:30)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Connectivity -->
+            <div>
+              <div
+                style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.05em;">
+                Digital Channels:
+              </div>
+              <div style="display: flex; gap: 12px;">
+                <a href="https://www.linkedin.com/in/romil-solank" target="_blank" rel="noopener noreferrer"
+                  class="social-pill" aria-label="LinkedIn Profile" title="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:romilsolanki7172@gmail.com" class="social-pill" aria-label="Email Directly"
+                  title="Email">
+                  <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+918511936803" class="social-pill" aria-label="Call Directly" title="Phone">
+                  <i class="fas fa-phone"></i>
+                </a>
+                <a href="SOLANKI_ROMIL_CHIRAGBHAI_Resume.pdf" class="social-pill" aria-label="Resume PDF" download
+                  title="Download Resume">
+                  <i class="fas fa-file-pdf"></i>
+                </a>
+                <a href="resume.html" class="social-pill" aria-label="Interactive Resume" title="View Resume">
+                  <i class="fas fa-file-code"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Interactive Contact Form -->
+          <div class="contact-form-card glass-card reveal reveal-delay-1">
+            <form class="contact-form" id="contactForm">
+              <!-- Web3Forms API Configuration -->
+              <input type="hidden" name="access_key" value="8f39a46f-c6be-430f-aaba-a85cbcc93a0e" />
+              <input type="hidden" name="subject" value="New Portfolio Inquiry - Romil Solanki" />
+              <input type="hidden" name="from_name" value="Romil Portfolio Visitor" />
+              <input type="checkbox" name="botcheck" style="display:none" />
+
+              <div class="form-group">
+                <label for="formName" class="form-label">Full Name</label>
+                <input type="text" id="formName" name="name" class="form-control" placeholder="e.g. Alex Morgan"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="formEmail" class="form-label">Email Address</label>
+                <input type="email" id="formEmail" name="email" class="form-control" placeholder="alex@company.com"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="formSubject" class="form-label">Subject</label>
+                <input type="text" id="formSubject" name="subject" class="form-control"
+                  placeholder="Project Inquiry / Job Opportunity" required />
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage" class="form-label">Project Details &amp; Message</label>
+                <textarea id="formMessage" name="message" class="form-control"
+                  placeholder="Describe your project, timeline, or requirements..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <i class="fas fa-paper-plane"></i>
+                <span>Send Message</span>
+              </button>
+
+              <div class="form-feedback" id="formFeedback"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-side">
+          <a href="#home" class="nav-brand">
+            <span class="brand-icon">RS</span>
+            <span>Romil<span class="brand-dot">.</span></span>
+          </a>
+          <p class="footer-tagline">
+            Crafting responsive web applications, Python software solutions, and modern digital experiences.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="#home" class="footer-nav-link">Home</a>
+          <a href="#about" class="footer-nav-link">About</a>
+          <a href="#education" class="footer-nav-link">Education</a>
+          <a href="#skills" class="footer-nav-link">Skills</a>
+          <a href="#experience" class="footer-nav-link">Experience</a>
+          <a href="#projects" class="footer-nav-link">Projects</a>
+          <a href="#contact" class="footer-nav-link">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>Romil Solanki</strong>. All rights reserved.
+        </div>
+        <div class="footer-time-badge">
+          <i class="fas fa-clock"></i>
+          <span id="liveClock">IST (Gujarat)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll back to top of page" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript Engine -->
+  <script src="main.js"></script>
+</body>
+
+</html>
